@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class Form1
 
-    Dim connString As String = "server=localhost;user=root;database=musicstudio;port=3306;"
+    Dim connString As String = "server=localhost; userid=root; database=musicstudio_db; port=3307;"
     Dim conn As MySqlConnection
 
     ' 1. FORM LOAD

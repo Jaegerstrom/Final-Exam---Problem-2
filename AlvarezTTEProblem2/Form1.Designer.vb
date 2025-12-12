@@ -67,8 +67,8 @@ Partial Class Form1
         '
         'cmbGenre
         '
-        Me.cmbGenre.AutoCompleteCustomSource.AddRange(New String() {"Pop", "Rock", "Jazz", "Hip-hop", "Classical"})
         Me.cmbGenre.FormattingEnabled = True
+        Me.cmbGenre.Items.AddRange(New Object() {"Pop", "Rock", "Jazz", "Hip-hop", "Classical"})
         Me.cmbGenre.Location = New System.Drawing.Point(367, 114)
         Me.cmbGenre.Name = "cmbGenre"
         Me.cmbGenre.Size = New System.Drawing.Size(173, 26)
