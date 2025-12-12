@@ -25,58 +25,60 @@ Partial Class Form1
         Me.txtTitle = New System.Windows.Forms.TextBox()
         Me.txtDuration = New System.Windows.Forms.TextBox()
         Me.txtArtist = New System.Windows.Forms.TextBox()
-        Me.txtGenre = New System.Windows.Forms.ComboBox()
+        Me.cmbGenre = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.dgvPreview = New System.Windows.Forms.DataGridView()
+        Me.btnLoad = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtTrackID = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvPreview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtTitle
         '
-        Me.txtTitle.Location = New System.Drawing.Point(53, 56)
+        Me.txtTitle.Location = New System.Drawing.Point(51, 114)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(152, 26)
         Me.txtTitle.TabIndex = 0
         '
         'txtDuration
         '
-        Me.txtDuration.Location = New System.Drawing.Point(548, 56)
+        Me.txtDuration.Location = New System.Drawing.Point(546, 114)
         Me.txtDuration.Name = "txtDuration"
         Me.txtDuration.Size = New System.Drawing.Size(152, 26)
         Me.txtDuration.TabIndex = 1
         '
         'txtArtist
         '
-        Me.txtArtist.Location = New System.Drawing.Point(211, 56)
+        Me.txtArtist.Location = New System.Drawing.Point(209, 114)
         Me.txtArtist.Name = "txtArtist"
         Me.txtArtist.Size = New System.Drawing.Size(152, 26)
         Me.txtArtist.TabIndex = 2
         '
-        'txtGenre
+        'cmbGenre
         '
-        Me.txtGenre.AutoCompleteCustomSource.AddRange(New String() {"Pop", "Rock", "Jazz", "Hip-hop", "Classical"})
-        Me.txtGenre.FormattingEnabled = True
-        Me.txtGenre.Location = New System.Drawing.Point(369, 56)
-        Me.txtGenre.Name = "txtGenre"
-        Me.txtGenre.Size = New System.Drawing.Size(173, 26)
-        Me.txtGenre.TabIndex = 3
+        Me.cmbGenre.AutoCompleteCustomSource.AddRange(New String() {"Pop", "Rock", "Jazz", "Hip-hop", "Classical"})
+        Me.cmbGenre.FormattingEnabled = True
+        Me.cmbGenre.Location = New System.Drawing.Point(367, 114)
+        Me.cmbGenre.Name = "cmbGenre"
+        Me.cmbGenre.Size = New System.Drawing.Size(173, 26)
+        Me.cmbGenre.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("MoeumT R", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.Label1.Location = New System.Drawing.Point(88, 35)
+        Me.Label1.Location = New System.Drawing.Point(86, 93)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 18)
         Me.Label1.TabIndex = 4
@@ -96,7 +98,7 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("MoeumT R", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.Label3.Location = New System.Drawing.Point(429, 35)
+        Me.Label3.Location = New System.Drawing.Point(427, 93)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 18)
         Me.Label3.TabIndex = 6
@@ -106,7 +108,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("MoeumT R", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.Label4.Location = New System.Drawing.Point(258, 35)
+        Me.Label4.Location = New System.Drawing.Point(256, 93)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(46, 18)
         Me.Label4.TabIndex = 7
@@ -116,7 +118,7 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("MoeumT R", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.Label5.Location = New System.Drawing.Point(595, 35)
+        Me.Label5.Location = New System.Drawing.Point(593, 93)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(68, 18)
         Me.Label5.TabIndex = 8
@@ -124,71 +126,73 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtTrackID)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.dgvPreview)
-        Me.GroupBox1.Controls.Add(Me.Button4)
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.btnLoad)
+        Me.GroupBox1.Controls.Add(Me.btnDelete)
+        Me.GroupBox1.Controls.Add(Me.btnUpdate)
+        Me.GroupBox1.Controls.Add(Me.btnAdd)
         Me.GroupBox1.Controls.Add(Me.txtDuration)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtTitle)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtArtist)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.txtGenre)
+        Me.GroupBox1.Controls.Add(Me.cmbGenre)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("MoeumT R", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GroupBox1.Location = New System.Drawing.Point(30, 93)
+        Me.GroupBox1.Location = New System.Drawing.Point(30, 73)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(741, 325)
+        Me.GroupBox1.Size = New System.Drawing.Size(741, 345)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Functions"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(53, 123)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(152, 37)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Add Track"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(53, 166)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(152, 37)
-        Me.Button2.TabIndex = 11
-        Me.Button2.Text = "Update Track"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(53, 209)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(152, 37)
-        Me.Button3.TabIndex = 12
-        Me.Button3.Text = "Delete Track"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(53, 252)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(152, 37)
-        Me.Button4.TabIndex = 13
-        Me.Button4.Text = "Load Track"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'dgvPreview
         '
         Me.dgvPreview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPreview.Location = New System.Drawing.Point(238, 99)
+        Me.dgvPreview.Location = New System.Drawing.Point(234, 159)
         Me.dgvPreview.Name = "dgvPreview"
-        Me.dgvPreview.Size = New System.Drawing.Size(432, 206)
+        Me.dgvPreview.Size = New System.Drawing.Size(432, 166)
         Me.dgvPreview.TabIndex = 14
+        '
+        'btnLoad
+        '
+        Me.btnLoad.Location = New System.Drawing.Point(49, 288)
+        Me.btnLoad.Name = "btnLoad"
+        Me.btnLoad.Size = New System.Drawing.Size(152, 37)
+        Me.btnLoad.TabIndex = 13
+        Me.btnLoad.Text = "Load Track"
+        Me.btnLoad.UseVisualStyleBackColor = True
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Location = New System.Drawing.Point(49, 245)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(152, 37)
+        Me.btnDelete.TabIndex = 12
+        Me.btnDelete.Text = "Delete Track"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.Location = New System.Drawing.Point(49, 202)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(152, 37)
+        Me.btnUpdate.TabIndex = 11
+        Me.btnUpdate.Text = "Update Track"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(49, 159)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(152, 37)
+        Me.btnAdd.TabIndex = 10
+        Me.btnAdd.Text = "Add Track"
+        Me.btnAdd.UseVisualStyleBackColor = True
         '
         'Label6
         '
@@ -199,6 +203,24 @@ Partial Class Form1
         Me.Label6.Size = New System.Drawing.Size(258, 18)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Final Exams - Alvarez, Hunterson"
+        '
+        'txtTrackID
+        '
+        Me.txtTrackID.Location = New System.Drawing.Point(289, 43)
+        Me.txtTrackID.Name = "txtTrackID"
+        Me.txtTrackID.ReadOnly = True
+        Me.txtTrackID.Size = New System.Drawing.Size(152, 26)
+        Me.txtTrackID.TabIndex = 15
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("MoeumT R", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
+        Me.Label7.Location = New System.Drawing.Point(352, 22)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(23, 18)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "ID"
         '
         'Form1
         '
@@ -221,7 +243,7 @@ Partial Class Form1
     Friend WithEvents txtTitle As TextBox
     Friend WithEvents txtDuration As TextBox
     Friend WithEvents txtArtist As TextBox
-    Friend WithEvents txtGenre As ComboBox
+    Friend WithEvents cmbGenre As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -229,9 +251,11 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dgvPreview As DataGridView
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnLoad As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnUpdate As Button
+    Friend WithEvents btnAdd As Button
     Friend WithEvents Label6 As Label
+    Friend WithEvents txtTrackID As TextBox
+    Friend WithEvents Label7 As Label
 End Class
