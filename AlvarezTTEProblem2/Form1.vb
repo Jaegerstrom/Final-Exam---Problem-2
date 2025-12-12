@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class Form1
 
-    Dim connString As String = "server=localhost; userid=root; database=musicstudio_db; port=3307;"
+    Dim connString As String = "server=localhost; userid=root; password=; database=musicstudio_db; port=3307;"
     Dim conn As MySqlConnection
 
     ' 1. FORM LOAD
@@ -17,7 +17,7 @@ Public Class Form1
         Try
             If conn.State = ConnectionState.Closed Then conn.Open()
 
-            Dim query As String = "SELECT * FROM title"
+            Dim query As String = "SELECT * FROM tracks_tbl"
             Dim cmd As New MySqlCommand(query, conn)
             Dim adapter As New MySqlDataAdapter(cmd)
             Dim table As New DataTable()
@@ -41,7 +41,7 @@ Public Class Form1
 
         Try
             conn.Open()
-            Dim query As String = "INSERT INTO tracks (title, artist, genre, duration) VALUES (@title, @author, @genre, @duration)"
+            Dim query As String = "INSERT INTO tracks_tbl (title, artist, genre, duration) VALUES (@title, @author, @genre, @duration)"
             Dim cmd As New MySqlCommand(query, conn)
 
             cmd.Parameters.AddWithValue("@title", txtTitle.Text)
@@ -89,7 +89,7 @@ Public Class Form1
 
         Try
             conn.Open()
-            Dim query As String = "UPDATE tracks SET title=@title, author=@artist, category=@genre, duration=@duration WHERE id=@id"
+            Dim query As String = "UPDATE tracks_tbl SET title=@title, author=@artist, category=@genre, duration=@duration WHERE id=@id"
             Dim cmd As New MySqlCommand(query, conn)
 
             cmd.Parameters.AddWithValue("@id", txtTrackID.Text)
@@ -123,7 +123,7 @@ Public Class Form1
         If result = DialogResult.Yes Then
             Try
                 conn.Open()
-                Dim query As String = "DELETE FROM tracks WHERE id=@id"
+                Dim query As String = "DELETE FROM tracks_tbl WHERE id=@id"
                 Dim cmd As New MySqlCommand(query, conn)
 
                 cmd.Parameters.AddWithValue("@id", txtTrackID.Text)
